@@ -185,7 +185,7 @@ contract NFTMarket is IERC721Receiver, EIP712  {
         );
 
         bytes32 _hash = _hashTypedDataV4(structHash); //注意需要同一个环境才能编译成功，调用测试时不能使用该方法生成hash数据        
-        address signer = ECDSA.recover(_hash, v, r, s);
+        address signer = ECDSA.recover(structHash, v, r, s);
         require(signer == owner, "Invalid signature: Not whitelisted");
         buyNFTByToken(NFTAddress, tokenId, tokenPrice);
     }
