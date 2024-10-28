@@ -1,0 +1,6 @@
+# 忽略 lib 目录中的所有内容
+/lib/
+
+# 忽略特定文件
+/lib/openzeppelin-contracts/
+/lib/forge-std/
